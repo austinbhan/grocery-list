@@ -1,6 +1,6 @@
 export function renderItem(item) {
     const li = document.createElement('li');
-    li.setAttribute('id', `${item}-container`);
+    li.setAttribute('id', 'container');
 
     const p = document.createElement('p');
     p.setAttribute('id', 'item');
@@ -11,4 +11,5 @@ export function renderItem(item) {
     number.textContent = `${item.quantity}`;
 
     li.append(p, number);
+    return li;
 }

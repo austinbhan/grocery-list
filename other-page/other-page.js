@@ -1,4 +1,5 @@
-import { checkAuth, logout, addItem } from '../fetch-utils.js';
+import { checkAuth, logout, addItem, getItems } from '../fetch-utils.js';
+import { renderItem } from './render-item.js';
 
 checkAuth();
 
@@ -19,3 +20,16 @@ groceryList.addEventListener('submit', async (e) => {
     const listOfItems = await addItem(newItem);
     console.log(listOfItems);
 });
+
+// Make a Function That Displays The List
+async function loadList() {
+    const lists = await getItems();
+    const groceryItems = document.getElementById('grocery-items');
+
+    for (let item of lists) {
+        const listDiv = renderItem(item);
+        groceryItems.append(listDiv);
+    }
+    return groceryItems;
+}
+loadList();

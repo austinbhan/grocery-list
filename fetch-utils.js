@@ -50,3 +50,7 @@ export async function addItem(item) { // Add One Item into List
     }
 }
 
+export async function getItems() { // Gets All Listed Item Data from GROCERY_LIST
+    const response = await client.from('GROCERY_LIST').select('*');
+    return response.data;
+} 
