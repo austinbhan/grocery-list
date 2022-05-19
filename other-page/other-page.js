@@ -10,8 +10,12 @@ logoutButton.addEventListener('click', () => {
 
 const groceryList = document.getElementById('grocery-list');
 
-groceryList.addEventListener('submit', (e) => {
+groceryList.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(groceryList);
-    console.log({ quantity: data.get(''), item: data.get('') });
+    const newItem = { 
+        quantity: data.get('quantity'), 
+        item: data.get('item') }; 
+    const listOfItems = await addItem(newItem);
+    console.log(listOfItems);
 });
