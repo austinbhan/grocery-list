@@ -40,3 +40,12 @@ export async function logout() {
 // function checkError({ data, error }) {
 //     return error ? console.error(error) : data;
 // }
+
+export async function addItem(item) { // Add One Item into List
+    const response = await client.from('GROCERY_LIST').insert(item);
+    if (response.data) {
+        return response.data;
+    } else {
+        console.error(response.error);
+    }
+}

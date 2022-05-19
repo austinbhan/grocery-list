@@ -24,11 +24,13 @@
         <button id="back-button">Take Me Back!</button>
     </div>
     <main>
-        <h1>Your Grocery List</h1>
-        <ol id="grocery-list">
-        </ol>
-        <div id="buttons">
+        <form id="grocery-list">
+            <h1>Your Grocery List</h1>
+            <input type="number" id="quantity">
+            <input type="item-name" id="item-name">
+            <ol id="grocery-items"></ol>
             <button>Add Item</button>
+        </form>
             <button>Remove Item</button>
         </div>
     </main>
