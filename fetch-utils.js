@@ -54,3 +54,8 @@ export async function getItems() { // Gets All Listed Item Data from GROCERY_LIS
     const response = await client.from('GROCERY_LIST').select('*');
     return response.data;
 } 
+
+// Delete Items Functions
+export async function deleteItems() {
+    
+}
