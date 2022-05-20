@@ -2,3 +2,13 @@
 .toggle {
     color: red;
 }
+
+#title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#witch {
+    width: 80%;
+}
