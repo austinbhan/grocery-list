@@ -1,9 +1,10 @@
-import { checkAuth, logout, addItem, getItems } from '../fetch-utils.js';
+import { checkAuth, logout, addItem, getItems, deleteItems } from '../fetch-utils.js';
 import { renderItem } from './render-item.js';
 
 checkAuth();
 
 const logoutButton = document.getElementById('logout');
+const removeAllButton = document.getElementById('remove-all-button');
 
 logoutButton.addEventListener('click', () => {
     logout();
@@ -34,3 +35,8 @@ async function loadList() {
         groceryItems.append(listDiv);
     }
 }
+
+removeAllButton.addEventListener('click', () => {
+    deleteItems();
+    loadList();
+});

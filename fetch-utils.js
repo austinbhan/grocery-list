@@ -52,10 +52,12 @@ export async function addItem(item) { // Add One Item into List
 
 export async function getItems() { // Gets All Listed Item Data from GROCERY_LIST
     const response = await client.from('GROCERY_LIST').select('*');
+    console.log(response.data);
     return response.data;
 } 
 
 // Delete Items Functions
 export async function deleteItems() {
-    
+    const deleteList = await client.from('GROCERY_LIST').delete().match({ user_id: getUser().id });
+    return deleteList.data;
 }
