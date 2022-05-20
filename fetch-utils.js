@@ -61,3 +61,15 @@ export async function deleteItems() {
     const deleteList = await client.from('GROCERY_LIST').delete().match({ user_id: getUser().id });
     return deleteList.data;
 }
+
+// Create Toggle Item Function
+export async function toggleItem(item) {
+    console.log(item);
+    const response = await client.from('GROCERY_LIST').update({ purchased: !item.purchased }).match({ user_id: item.id });
+
+    if (response.error) {
+        console.error(response.error.message);
+    } else {
+        return response.data;
+    }
+}
