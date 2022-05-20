@@ -3,13 +3,9 @@ export function renderItem(item) {
     li.setAttribute('id', 'container');
 
     const p = document.createElement('p');
-    p.setAttribute('id', 'item');
-    p.textContent = `${item.item}`;
+    p.setAttribute('id', 'item-and-name');
+    p.textContent = `${item.quantity} ${item.item} `;
 
-    const number = document.createElement('p');
-    number.setAttribute('id', 'number');
-    number.textContent = `${item.quantity}`;
-
-    li.append(p, number);
+    li.append(p);
     return li;
 }

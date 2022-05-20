@@ -16,20 +16,21 @@ groceryList.addEventListener('submit', async (e) => {
     const data = new FormData(groceryList);
     const newItem = { 
         quantity: data.get('quantity'), 
-        item: data.get('item') }; 
+        item: data.get('item') 
+    }; 
     const listOfItems = await addItem(newItem);
     console.log(listOfItems);
+    loadList();
 });
 
+loadList();
 // Make a Function That Displays The List
 async function loadList() {
     const lists = await getItems();
     const groceryItems = document.getElementById('grocery-items');
-
+    groceryItems.textContent = '';
     for (let item of lists) {
         const listDiv = renderItem(item);
         groceryItems.append(listDiv);
     }
-    return groceryItems;
 }
-loadList();
