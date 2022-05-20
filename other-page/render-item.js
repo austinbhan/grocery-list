@@ -1,3 +1,5 @@
+import { toggleItem } from '../fetch-utils.js';
+
 export function renderItem(item) {
     const li = document.createElement('li');
     li.setAttribute('id', 'container');
@@ -8,6 +10,7 @@ export function renderItem(item) {
     
     p.addEventListener('click', () => {
         p.classList.add('toggle');
+        toggleItem(item);
     });
 
     li.append(p);
