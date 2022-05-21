@@ -13,32 +13,35 @@
     <title>Document</title>
 </head>
 
-<body>
+<background>
+<body id="list-background">
     <header>
         <div class="gutter-right logo">
-            <img src="../assets/big-logo.png" />
         </div>
-    </header>    
-    <div id="navigation">
-        <button id="logout">Logout</button>
-        <button id="back-button">Take Me Back!</button>
+    </header>
+    <div id="container">
+        <div id="navigation">
+            <button id="logout">Logout</button>
+            <button id="back-button">Take Me Back!</button>
+        </div>
+        <main>
+            <form id="grocery-list">
+                <h1>Your Grocery List</h1>
+                <input type="number" id="quantity" name="quantity">
+                <input type="item" id="item" name="item">
+                <ul id="grocery-items">
+                </ul>
+                <button>Add Item</button>
+            </form>
+                <button id="remove-all-button">Remove All</button>
+        </div>
     </div>
-    <main>
-        <form id="grocery-list">
-            <h1>Your Grocery List</h1>
-            <input type="number" id="quantity" name="quantity">
-            <input type="item" id="item" name="item">
-            <ul id="grocery-items">
-            </ul>
-            <button>Add Item</button>
-        </form>
-            <button id="remove-all-button">Remove All</button>
-        </div>
     </main>
     <footer>
         <div class="copy gutter-right">&copy; 2021 Alchemy Code Lab</div>
     </footer>
     <script type="module" src="./other-page.js"></script>
 </body>
+</background>
 
 </html>

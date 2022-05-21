@@ -3,6 +3,19 @@
     color: red;
 }
 
+#background {
+    background-color: rgb(233, 191, 24);
+}
+
+#container {
+    background-color: white;
+}
+
+#list-background {
+    background-image: url("../assets/vegetables.jpeg");
+    background-size: 50%;
+}
+
 #title-container {
     display: flex;
     flex-direction: column;
@@ -12,3 +25,4 @@
 #witch {
     width: 80%;
 }
+
